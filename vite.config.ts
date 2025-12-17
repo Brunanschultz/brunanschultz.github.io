@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // ajuste o base para GitHub Pages; use '/' para username.github.io ou '/REPO_NAME/' para repo pages
+      base: env.VITE_BASE || '/',
       server: {
         port: 3000,
         host: '0.0.0.0',
